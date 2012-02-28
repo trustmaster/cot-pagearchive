@@ -4,8 +4,8 @@
 Code=pagearchive
 Name=Page Archive
 Description=Groups pages by months like in WordPress blogs
-Version=1.0
-Date=2012-01-23
+Version=1.1
+Date=2012-02-28
 Author=Trustmaster
 Copyright=&copy; Vladimir Sibirov 2012
 Notes=Create a pseudo-category and set it in plugin config after installation
@@ -25,6 +25,7 @@ sort=04:select:desc,asc:desc:Menu sort order
 index=11:radio::1:Enable menu on index
 list=12:radio::0:Enable menu in page list
 page=13:radio::0:Enable menu on page
+cache=14:radio::1:Enable cache
 [END_COT_EXT_CONFIG]
 ==================== */
 
