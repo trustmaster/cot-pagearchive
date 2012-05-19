@@ -15,6 +15,7 @@ if ($caller == 'index' && $cfg['plugin']['pagearchive']['index']
 	|| $caller == 'page.main' && $cfg['plugin']['pagearchive']['page'])
 {
 	require_once cot_incfile('page', 'module');
+	require_once cot_langfile('pagearchive', 'plug');
 
 	$pa_tag = 'INDEX_PAGEARCHIVE';
 	if ($caller == 'page.list')
@@ -56,7 +57,7 @@ if ($caller == 'index' && $cfg['plugin']['pagearchive']['index']
 		{
 			$pa_t->assign(array(
 				'ROW_MONTH' => $pa_row['month'],
-				'ROW_MONTH_NAME' => $L[$pa_row['month_name']],
+				'ROW_MONTH_NAME' => isset($L['pagearch_'.$pa_row['month_name']]) ? $L['pagearch_'.$pa_row['month_name']] : $L[$pa_row['month_name']],
 				'ROW_YEAR' => $pa_row['year'],
 				'ROW_COUNT' => $pa_row['count'],
 				'ROW_URL' => cot_url('page', 'c='.$cfg['plugin']['pagearchive']['cat'].'&year='.$pa_row['year'].'&month='.$pa_row['month'])

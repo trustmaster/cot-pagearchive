@@ -14,4 +14,17 @@ $L['cfg_index'] = array('Включить меню на главной');
 $L['cfg_list'] = array('Включить меню в категориях страниц');
 $L['cfg_page'] = array('Включить меню на страницах');
 
+$L['pagearch_January'] = 'Январь';
+$L['pagearch_February'] = 'Февраль';
+$L['pagearch_March'] = 'Март';
+$L['pagearch_April'] = 'Апрель';
+$L['pagearch_May'] = 'Май';
+$L['pagearch_June'] = 'Июнь';
+$L['pagearch_July'] = 'Июль';
+$L['pagearch_August'] = 'Август';
+$L['pagearch_September'] = 'Сентябрь';
+$L['pagearch_October'] = 'Октябрь';
+$L['pagearch_November'] = 'Ноябрь';
+$L['pagearch_December'] = 'Декабрь';
+
 ?>

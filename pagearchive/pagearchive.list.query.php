@@ -11,6 +11,7 @@ defined('COT_CODE') or die('Wrong URL');
 
 if ($c == $cfg['plugin']['pagearchive']['cat'])
 {
+	require_once cot_langfile('pagearchive', 'plug');
 	// Selection filter by category
 	$pa_cats = preg_split('#,\s*#', $cfg['plugin']['pagearchive']['cats']);
 
@@ -41,8 +42,9 @@ if ($c == $cfg['plugin']['pagearchive']['cat'])
 	$where['archive'] = "`{$cfg['plugin']['pagearchive']['field']}` BETWEEN $pa_low AND $pa_high";
 	
 	// Generate relevant title and breadcrumb
-	$catpath = empty($month) ? $cat['title'] . ' ' . $cfg['separator'] . ' ' . $year : $cat['title'] . ' ' . $cfg['separator'] . ' ' . $L[date('F', $pa_low)] . ' ' . $year;
-	$cat['title'] = empty($month) ? $year . ' - ' . $cat['title'] : $L[date('F', $pa_low)] . ' ' . $year . ' - ' . $cat['title'];
+	$month_name = isset($L['pagearch_'.date('F', $pa_low)]) ? $L['pagearch_'.date('F', $pa_low)] : $L[date('F', $pa_low)];
+	$catpath = empty($month) ? $cat['title'] . ' ' . $cfg['separator'] . ' ' . $year : $cat['title'] . ' ' . $cfg['separator'] . ' ' . $month_name . ' ' . $year;
+	$cat['title'] = empty($month) ? $year . ' - ' . $cat['title'] : $month_name . ' ' . $year . ' - ' . $cat['title'];
 }
 
 ?>
