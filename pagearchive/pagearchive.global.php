@@ -2,7 +2,7 @@
 /* ====================
 [BEGIN_COT_EXT]
 Hooks=global
-Tags=index.tpl:{PHP|pagearchive};page.list.tpl:{PHP|pagearchive};page.tpl:{PHP|pagearchive}
+Tags=index.tpl:{PHP|pagearchive('news')}
 [END_COT_EXT]
 ==================== */
 
