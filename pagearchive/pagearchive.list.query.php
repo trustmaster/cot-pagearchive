@@ -22,7 +22,7 @@ if ($c == $cfg['plugin']['pagearchive']['cat'])
 	}
 
 	$where['cat'] = "page_cat IN ('" . implode("','", $pa_catsub) . "')";
-	
+
 	// Import date parameters
 	$year = cot_import('year', 'G', 'INT');
 	$month = cot_import('month', 'G', 'INT');
@@ -34,17 +34,27 @@ if ($c == $cfg['plugin']['pagearchive']['cat'])
 	{
 		cot_die();
 	}
-	
+
 	// Generate selection condition
 	$pa_low = empty($month) ? cot_mktime(0, 0, 0, 1, 1, $year) : cot_mktime(0, 0, 0, $month, 1, $year);
 	$pa_high = empty($month) ? cot_mktime(0, 0, 0, 1, 1, $year + 1) : cot_mktime(0, 0, 0, $month + 1, 1, $year);
 
 	$where['archive'] = "`{$cfg['plugin']['pagearchive']['field']}` BETWEEN $pa_low AND $pa_high";
-	
+
 	// Generate relevant title and breadcrumb
 	$month_name = isset($L['pagearch_'.date('F', $pa_low)]) ? $L['pagearch_'.date('F', $pa_low)] : $L[date('F', $pa_low)];
 	$catpath = empty($month) ? $cat['title'] . ' ' . $cfg['separator'] . ' ' . $year : $cat['title'] . ' ' . $cfg['separator'] . ' ' . $month_name . ' ' . $year;
 	$cat['title'] = empty($month) ? $year . ' - ' . $cat['title'] : $month_name . ' ' . $year . ' - ' . $cat['title'];
+
+	// Attach year and month URL parameters
+	if (!empty($year))
+	{
+		$list_url_path['year'] = $year;
+	}
+	if (!empty($month))
+	{
+		$list_url_path['month'] = $month;
+	}
 }
 
 ?>
