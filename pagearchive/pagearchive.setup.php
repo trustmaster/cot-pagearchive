@@ -4,10 +4,10 @@
 Code=pagearchive
 Name=Page Archive
 Description=Groups pages by months like in WordPress blogs
-Version=1.6
-Date=2012-06-25
+Version=1.7
+Date=2013-02-28
 Author=Trustmaster
-Copyright=&copy; Vladimir Sibirov and Seditio.By 2012
+Copyright=&copy; Vladimir Sibirov and Seditio.By 2012-2013
 Notes=Create a pseudo-category and set it in plugin config after installation
 SQL=
 Auth_guests=R
@@ -32,4 +32,3 @@ whitelist=21:string:::Category white list, separated with semicolons
 ==================== */
 
 defined('SED_CODE') or die('Wrong URL');
-?>
